@@ -31,6 +31,24 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          platforms: linux/amd64
+          push: false
+          tags: ghcr.io/gotti/container-utils:latest
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ' ghcr.io/gotti/container-utils:latest'
+          format: 'table'
+          exit-code: '0'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+
       - name: Build and push to GitHub Container Registry
         uses: docker/build-push-action@v2
         with:

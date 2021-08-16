@@ -12,7 +12,7 @@ RUN tar xzvf kustomize.tar.gz -C /usr/bin/
 RUN curl -L https://github.com/FairwindsOps/pluto/releases/download/v4.2.0/pluto_4.2.0_linux_amd64.tar.gz -o pluto.tar.gz
 RUN tar xzvf pluto.tar.gz -C /usr/bin/
 
-RUN curl -L https://github.com/open-policy-agent/conftest/releases/download/v0.25.0/conftest_0.25.0_Linux_x86_64.tar.gz -o conftest.tar.gz
+RUN curl -L https://github.com/open-policy-agent/conftest/releases/download/v0.26.0/conftest_0.26.0_Linux_x86_64.tar.gz -o conftest.tar.gz
 RUN tar xzvf conftest.tar.gz -C /usr/bin/
 
 RUN curl -L https://github.com/aquasecurity/trivy/releases/download/v0.19.2/trivy_0.19.2_Linux-64bit.tar.gz -o trivy.tar.gz
