@@ -1,6 +1,6 @@
 FROM ubuntu:20.10
 
-RUN apt -y update && apt -y install curl
+RUN apt -y update && apt -y install curl git
 
 RUN curl -OL https://github.com/tfsec/tfsec/releases/download/v0.39.42/tfsec-linux-amd64
 RUN mv tfsec-linux-amd64 /usr/bin/tfsec
